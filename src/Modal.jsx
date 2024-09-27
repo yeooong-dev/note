@@ -33,6 +33,7 @@ const Modal = ({ isOpen, onClose, onSubmit, initialText = "", isEditing, isDarkM
         if (text.trim()) {
             onSubmit(text);
         }
+        setText("");
         onClose(); // 이 부분에서 onClose를 함수로 호출
     };
 

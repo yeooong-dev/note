@@ -205,8 +205,9 @@ const Note = () => {
                 <Bottom>
                     <AddBtn
                         onClick={() => {
-                            setIsEditing(false); // 새 메모를 추가할 때는 수정 모드 비활성화
-                            setModalIsOpen(true);
+                            setIsEditing(false); // 새 메모 모드로 진입
+                            setCurrentEditIndex(null); // 인덱스 초기화
+                            setModalIsOpen(true); // 모달 열기
                         }}
                     >
                         새 메모
