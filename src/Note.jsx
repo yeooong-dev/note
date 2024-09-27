@@ -205,7 +205,7 @@ const Note = () => {
                 <Bottom>
                     <AddBtn
                         onClick={() => {
-                            // 새 메모는 수정 모드 비활성화
+                            setIsEditing(false); // 새 메모를 추가할 때는 수정 모드 비활성화
                             setModalIsOpen(true);
                         }}
                     >
@@ -217,7 +217,7 @@ const Note = () => {
                 isOpen={modalIsOpen}
                 onClose={() => setModalIsOpen(false)}
                 onSubmit={isEditing ? updateNote : addNote}
-                initialText={isEditing && currentEditIndex !== null ? notes[currentEditIndex]?.text : ""} // 수정 모드는 기존 메모를 로드
+                initialText={isEditing && currentEditIndex !== null ? notes[currentEditIndex]?.text : ""} // 새 메모는 빈 값
                 isEditing={isEditing}
                 isDarkMode={isDarkMode}
             />
